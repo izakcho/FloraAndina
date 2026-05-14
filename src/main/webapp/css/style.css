@@ -1,0 +1,333 @@
+/* ============================================================
+   FloraAndina – Paleta verde andina
+   Verde bosque: #1a5c2a | Verde medio: #2d8c45 | Verde claro: #e8f5e9
+   Acento dorado: #c8a000 | Fondo: #f0f7f0
+   ============================================================ */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    color: #1a1a1a;
+    overflow-x: hidden;
+}
+
+/* ── Navbar ─────────────────────────────────────────────── */
+.navbar {
+    background: linear-gradient(135deg, #2d8c45, #1a5c2a);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0.9rem 2rem;
+    gap: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .brand {
+    font-size: 1.3rem;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #fff;
+}
+
+.navbar .brand span { color: #c8a000; }
+
+.navbar nav {
+    display: flex;
+    gap: 0.25rem;
+    flex: 1;
+    justify-content: flex-start;
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+.navbar nav a {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    background-color: #c8a000;
+    color: #1a1a1a;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .user-info {
+    font-size: 0.85rem;
+    color: #c8e6c9;
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+/* ── Contenedor principal ────────────────────────────────── */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    animation: slideIn 0.6s ease;
+    overflow-x: auto;
+}
+
+@keyframes slideIn {
+    0%   { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Card ────────────────────────────────────────────────── */
+.card {
+    background-color: #ffffff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Encabezados ─────────────────────────────────────────── */
+h1, h2 {
+    color: #1a5c2a;
+    font-weight: 700;
+    animation: fadeInTitle 0.8s ease;
+}
+
+h2 { text-align: center; font-size: 2rem; margin-bottom: 1rem; }
+
+@keyframes fadeInTitle {
+    0%   { opacity: 0; transform: translateY(-8px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Page header ─────────────────────────────────────────── */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.page-header h1 { color: #1a5c2a; font-size: 1.6rem; }
+
+/* ── Formularios ─────────────────────────────────────────── */
+.form-group  { margin-bottom: 1.5rem; }
+.form-group label { font-weight: 600; color: #1a1a1a; }
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #a5d6a7;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.04);
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #2d8c45;
+    box-shadow: 0 0 8px rgba(45, 140, 69, 0.3);
+}
+
+select.form-control, input[type="number"] { border-radius: 8px; }
+
+/* ── Form grid ───────────────────────────────────────────── */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 1.5rem;
+}
+
+/* ── Botones ─────────────────────────────────────────────── */
+.btn {
+    display: inline-block;
+    padding: 0.55rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    line-height: 1.4;
+}
+
+.btn:hover { transform: scale(1.04); }
+
+/* Verde principal */
+.btn-verde { background-color: #2d8c45; color: #fff; }
+.btn-verde:hover { background-color: #1a5c2a; box-shadow: 0 5px 15px rgba(45,140,69,0.35); }
+
+/* Dorado / editar */
+.btn-amarillo { background-color: #c8a000; color: #1a1a1a; }
+.btn-amarillo:hover { background-color: #a07c00; }
+
+/* Rojo / eliminar */
+.btn-rojo { background-color: #c62828; color: #fff; }
+.btn-rojo:hover { background-color: #8b0000; }
+
+/* Claro / volver */
+.btn-claro { background-color: #e8f5e9; color: #1a5c2a; border: 1px solid #a5d6a7; }
+.btn-claro:hover { background-color: #c8e6c9; }
+
+/* Botón exportar .txt */
+.btn-txt { background-color: #37474f; color: #fff; }
+.btn-txt:hover { background-color: #1c2d35; }
+
+.btn-sm { padding: 0.3rem 0.7rem; font-size: 0.82rem; }
+
+/* Submit heredado */
+button[type="submit"], .btn-primary {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #2d8c45;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+}
+
+button[type="submit"]:hover, .btn-primary:hover {
+    background-color: #1a5c2a;
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(45,140,69,0.3);
+}
+
+/* ── Alertas ─────────────────────────────────────────────── */
+.alert {
+    padding: 0.8rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-align: center;
+    animation: fadeInAlert 0.6s ease;
+}
+
+.alert-success { background-color: #d4edda; color: #155724; border: 1px solid #a5d6a7; }
+.alert-error   { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+.alert-danger  { background-color: #f8d7da; color: #721c24; }
+
+@keyframes fadeInAlert {
+    0%   { opacity: 0; transform: translateY(-4px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Tabla ───────────────────────────────────────────────── */
+.tabla-wrap { overflow-x: auto; }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+
+thead tr { background: linear-gradient(135deg, #2d8c45, #1a5c2a); color: #fff; }
+thead th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; }
+
+tbody tr { border-bottom: 1px solid #c8e6c9; transition: background-color 0.15s; }
+tbody tr:hover { background-color: #f1f8f2; }
+tbody td { padding: 0.65rem 1rem; vertical-align: middle; }
+
+/* ── Badges de estado ────────────────────────────────────── */
+.badge { display: inline-block; padding: 0.25rem 0.6rem; border-radius: 20px; font-size: 0.78rem; font-weight: 700; }
+
+.badge-vulnerable { background-color: #fff9c4; color: #7a6000; }
+.badge-amenazada  { background-color: #ffe0b2; color: #8c4a00; }
+.badge-peligro    { background-color: #ffcdd2; color: #7f0000; }
+
+/* ── Barra de búsqueda ───────────────────────────────────── */
+.search-bar { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1.2rem; }
+
+.search-bar input {
+    flex: 1;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid #a5d6a7;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.search-bar input:focus { outline: none; border-color: #2d8c45; box-shadow: 0 0 8px rgba(45,140,69,0.25); }
+
+/* ── Reporte stats ───────────────────────────────────────── */
+.reporte-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-bottom: 1.5rem; }
+
+.stat-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 1.4rem 1.2rem;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    border-top: 4px solid #2d8c45;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+.stat-card .numero { font-size: 2.2rem; font-weight: 700; color: #1a5c2a; line-height: 1.2; }
+.stat-card .label  { font-size: 0.85rem; color: #555; margin-top: 0.4rem; }
+
+/* Fila de botones en reporte */
+.reporte-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+
+/* ── Auth ────────────────────────────────────────────────── */
+.auth-wrapper { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+
+.auth-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    animation: slideIn 0.6s ease;
+}
+
+.auth-card .logo { text-align: center; margin-bottom: 1.8rem; }
+.auth-card .logo h2 { color: #1a5c2a; font-size: 1.7rem; font-weight: 700; margin-bottom: 0.3rem; }
+.auth-card .logo p  { color: #666; font-size: 0.9rem; }
+
+.footer-link { text-align: center; margin-top: 1.2rem; font-size: 0.88rem; color: #555; }
+.footer-link a { color: #2d8c45; font-weight: bold; text-decoration: none; }
+.footer-link a:hover { color: #c8a000; text-decoration: underline; }
+
+/* ── Links sueltos ───────────────────────────────────────── */
+.btn-link {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    color: #2d8c45;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.btn-link:hover { color: #c8a000; text-decoration: underline; }
+
+a:focus { outline: none; text-decoration: underline; }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .form-grid    { grid-template-columns: 1fr; }
+    .reporte-stats{ grid-template-columns: 1fr; }
+    .navbar       { flex-wrap: wrap; gap: 0.5rem; }
+    .navbar nav   { flex-wrap: wrap; }
+    .page-header  { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+}
